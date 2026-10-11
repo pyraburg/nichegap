@@ -1,0 +1,26 @@
+# Roadmap
+
+- [x] Phase 1: Cloud + auth (sign up/in/out, reset password), profiles, research_queries, research_data, opportunities, reports, RLS, research form + history
+- [x] Phase 2A: DataForSEO keyword demand, 30-day cache, cost logging, duplicate protection
+- [x] Phase 2B: Amazon marketplace research (live/advanced endpoint), deterministic keyword selection (max 5), relevance filtering, derived metrics (strong_competitor_v1), 7-day cache, staged pipeline (keyword_demand → amazon_supply → complete), evidence UI
+- [x] Phase 3A: deterministic Opportunity Score engine score_v1 (server-side, versioned, audited, tests, Score Breakdown UI)
+- [x] Phase 3A.1: score_v1_1 (keyword clustering, Amazon keyword/product relevance, seasonality, purchase coverage, component confidence, evidence quality); score_v1 kept
+- [x] Phase 3B: customer Opportunity Report v1 (deterministic snapshot, immutable, print-friendly)
+- [x] Phase 4A step 1: Apify Reddit Actor (fatihtahta/reddit-scraper-search-fast) behind CommunityProvider + controlled test path only
+- [x] Phase 4A.2: deterministic community relevance, signals, recency, metrics, evidence quality (community_signals_v1)
+- [x] Phase 4A.3: engagement integrity fix + deterministic community query generator (community_query_gen_v1), not executed
+- [x] Phase 4A.4: Apify final-cost integrity (pending→final reconciliation, run id, idempotent, cost ceiling helper)
+- [x] Phase 4A.5: controlled multi-query community run (one Actor run, 8 queries, guarded start/collect, cross-query dedupe)
+- [x] Phase 4A.6: report_v2 with Customer Problem Evidence (descriptive community data)
+- [x] Phase 4B.1: grounded AI engine infrastructure (evidence packet, strict schema, grounding validation, caching, cost guards) — no AI call made
+- [ ] Phase 4B next: first real AI analysis — blocked on OPENAI_API_KEY secret + model prices (waiting for instruction)
+- [ ] Later (waiting for instruction): AI analysis, Opportunity Score engine (Demand×0.40 + Competition×0.25 + PurchaseIntent×0.20 + Trend×0.15), credits, Stripe, admin
+- [x] Phase 5.3: automated end-to-end pipeline (pipeline_v1, lease, resume, bounded retry, internal cost summary)
+- [x] Phase 5.3 live end-to-end test (home sourdough baking) + DataForSEO per-job ceiling
+- [x] Phase 5.4: background research execution (scheduler-driven worker, page is status-only)
+- [x] Phase 6.1: Research Credit ledger, reservations, balance UI, admin test grants (no Stripe)
+- [x] Phase 6.2: Lemon Squeezy checkout, webhook, Plan & Credits page (test mode) — waiting on Lemon Squeezy secrets for live test-mode transactions
+- [x] Phase 6.3: credit commercial rules (finalize on complete, keep on retryable failure, release same type on exhausted failure, monthly expiry on subscription end)
+- [x] Phase 7.1: admin validation dashboard, QA reviews, refund notice (8 niches prepared, not run)
+- [x] Security fix: removed legacy BYOK AI proxy + workspace; auth/SSRF guard tests
+- [x] Security fix: research job deletion guard (credit-safe)
